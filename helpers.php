@@ -4,7 +4,8 @@
  * @param string $path
  * @return string 
 */
-function basePath($path = '') {
+function basePath($path = '') 
+{
    if (empty($path)) {
       throw new ValueError("Path cannot be empty.");
   }
@@ -13,7 +14,7 @@ function basePath($path = '') {
 /**
  * Load a view
  * @param string $name
- * @return string
+ * @return void
  */
 function loadView($name) {
    if (empty($name)) {
@@ -23,7 +24,7 @@ function loadView($name) {
    if (!file_exists($viewPath)) {
        throw new ValueError("View {$name} does not exist.");
    }
-   return $viewPath; // Return the path instead of requiring it directly
+   require $viewPath; // Return the path instead of requiring it directly
 }
 
  /**
@@ -40,4 +41,27 @@ function loadPartial($name)
    }else{
       echo "Partial {$name} does not exist";
    }
+
+  
 }
+ /**
+    * Inspect value
+    * @param mixed $value
+    * @return void
+    */
+    function inspect($value)
+    {
+       echo "<pre>";
+       var_dump($value);
+       echo "</pre>";
+    }
+    /**Inspect value and die
+     * @param mixed $value
+     * @return void
+     */
+    function inspectAndDie($value)
+    {
+      echo "<pre>";
+      die(var_dump($value));
+      
+    }
