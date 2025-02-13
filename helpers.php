@@ -16,7 +16,7 @@ function basePath($path = '')
  * @param string $name
  * @return void
  */
-function loadView($name) {
+function loadView($name , $data = []) {
    if (empty($name)) {
        throw new ValueError("View name cannot be empty.");
    }
@@ -24,6 +24,8 @@ function loadView($name) {
    if (!file_exists($viewPath)) {
        throw new ValueError("View {$name} does not exist.");
    }
+
+   extract($data);
    require $viewPath; // Return the path instead of requiring it directly
 }
 
@@ -64,4 +66,14 @@ function loadPartial($name)
       echo "<pre>";
       die(var_dump($value));
       
+    }
+
+    /**
+     * Format salary
+     * @param string  $salary
+     * @return string Formatted salary
+     */
+    function formatSalary($salary)
+    {
+      return '$'. number_format($salary);
     }
