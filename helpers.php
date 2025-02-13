@@ -20,7 +20,7 @@ function loadView($name , $data = []) {
    if (empty($name)) {
        throw new ValueError("View name cannot be empty.");
    }
-   $viewPath = basePath("views/{$name}.view.php");
+   $viewPath = basePath("App/views/{$name}.view.php");
    if (!file_exists($viewPath)) {
        throw new ValueError("View {$name} does not exist.");
    }
@@ -36,7 +36,7 @@ function loadView($name , $data = []) {
  */
 function loadPartial($name)
 {
-   $partialPath = basePath("views/partials/{$name}.php");
+   $partialPath = basePath("App/views/partials/{$name}.php");
    if(file_exists($partialPath))
    {
       require $partialPath;

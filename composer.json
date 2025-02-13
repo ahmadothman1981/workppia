@@ -1,0 +1,16 @@
+{
+    "name": "ahmadothman/workopia",
+    "description": "job listing application",
+    "authors": [
+        {
+            "name": "Ahmad Othman",
+            "email": "ahmadothman@outlook.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}

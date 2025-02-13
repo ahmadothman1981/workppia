@@ -64,7 +64,7 @@
         resume.
       </p>
       <a
-        href="mailto:manager@company.com"
+        href="mailto:<?= $listing->email ?>"
         class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium cursor-pointer text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
       >
         Apply Now
